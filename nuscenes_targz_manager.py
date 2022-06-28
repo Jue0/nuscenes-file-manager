@@ -20,6 +20,7 @@ output: Files extracted from compressed files,
 
 ## 라이브러리
 import argparse
+from ast import arg
 import logging
 import tarfile
 
@@ -29,7 +30,30 @@ import csv
 
 
 def main():
+
+    parser = argparse.ArgumentParser(description='인자값 받기')
+    parser.add_argument('--src', required=True, help='압축파일들 있는 경로')    
+    parser.add_argument('--dst', required=True, help='압축해제할 경로')    
+
+    args = parser.parse_args()
+    # print(args.src)
+    # print(args.dst)
+    
+    while 0: ###
+    
+        fname = 
+        decompressed = tarfile.open(fname)
+        # decompressed.extractall(args.dst)
+        decompressed.getmembers(args.dst)
+
+
+
+
+        decompressed.close()
+
+
     ju=0
+
     
 
 main()
